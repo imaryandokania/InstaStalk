@@ -94,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
                 closeKeyBoard();
                 dialog.setMessage("Connecting to Instagram Server");
                 dialog.show();
+                dialog.setCanceledOnTouchOutside(false);
                 d=eText.getText().toString();
                 eText.setText("");
                 String url = "https://www.instagram.com/"+d+"/?__a=1";
@@ -166,6 +167,7 @@ image.setOnClickListener(new View.OnClickListener() {
     public void onClick(View view) {
       dialog.setMessage("Saving to Gallery");
       dialog.show();
+        dialog.setCanceledOnTouchOutside(false);
         if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) == PackageManager.PERMISSION_DENIED) {
             ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, requestCode);
             onRequestPermissionsResult(requestCode, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, grantResults);
